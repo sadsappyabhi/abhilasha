@@ -7,12 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
-    @Value("${spring.application.name}")
-    String appName;
 
     @RequestMapping("/")
     public String homePage(Model model) {
-        model.addAttribute("appName", appName);
+        model.addAttribute("pageTitle", "abhilasha is an electro-acoustic improviser");
         return "home";
     }
 

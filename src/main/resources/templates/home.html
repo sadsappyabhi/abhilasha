@@ -5,8 +5,9 @@
 <body>
     <div th:insert="~{fragments.html :: header}"></div>
     <div th:insert="~{fragments.html :: navbar}"></div>
-    <h2>abhilasha is an electro-acoustic improviser</h2>
+    <h1 th:text="${pageTitle}"></h1>
 
     <p>An image or two will go here</p>
+    <a style="display: none;" rel="me" class="mstdn-verification" href="https://hachyderm.io/@abhicf">Mastodon</a>
 </body>
 </html>
