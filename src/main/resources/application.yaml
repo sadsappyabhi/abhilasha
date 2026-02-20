@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Abhilasha Chebolu Figueroa
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+server:
+  port: 8081
