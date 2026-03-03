@@ -6,7 +6,7 @@ spring:
     prefix: classpath:/templates/
     suffix: .html
   devtools:
-    livereload:
+    LiveReload:
       enabled: true
     restart:
       enabled: true

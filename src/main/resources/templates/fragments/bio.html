@@ -1,13 +1,5 @@
-<!doctype html>
-<html lang="en">
-<th:block th:insert,data-th-insert="~{fragments.html :: head}"></th:block>
-
-<body>
-    <div th:insert="~{fragments.html :: header}"></div>
-    <div th:insert="~{fragments.html :: navbar}"></div>
+<div th:fragment="bio">
     <h1 th:text="${pageTitle}"></h1>
-
     <p>Abhilasha is a guitarist and electro-acoustic improviser currently residing in Chicago, IL. She attended Capital University in Columbus, OH where she studied with Stan Smith, Mark Flugge, and Dina Lentsner. During her time in Ohio, she performed throughout the state with her solo harsh noise project 'Null Copula' and also led the free-jazz ensemble 'Turtle Boat'. She also held tenure with local groups including <a href="https://calebmiller.bandcamp.com/track/if-the-heavens-came-down" target="_blank">Gault</a>, the <a href="https://ryanjewell.bandcamp.com/album/vibration" target="_blank">Ryan Jewell Quintet</a>, and <a href="https://princsex.bandcamp.com/album/uncensored" target="_blank">Princsex</a>. Abhilasha also played an active role in curating performances of harsh noise and improvised electro-acoustic music throughout central Ohio.</p>
     <p>Abhilasha's modest recorded output can be heard on releases from Breaching Static, Amalgam, Two Rooms, Deathbed Tapes, Lurker Bias, and Very Much Recordings.</p>
-</body>
-</html>
+</div>

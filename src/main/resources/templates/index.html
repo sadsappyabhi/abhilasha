@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head th:insert="~{fragments.html :: head}"><title th:text="${pageTitle}"></title></head>
+
+<body>
+    <div class="header-nav-template">
+        <div th:insert="~{fragments.html :: header}"></div>
+        <div th:insert="~{fragments.html :: navbar}"></div>
+    </div>
+
+    <div th:insert="${content}">
+        <!-- Content Fragments Go Here! -->
+    </div>
+</body>
+</html>

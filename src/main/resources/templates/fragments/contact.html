@@ -1,10 +1,4 @@
-<!doctype html>
-<html lang="en">
-<th:block th:insert,data-th-insert="~{fragments.html :: head}"></th:block>
-
-<body>
-    <div th:insert="~{fragments.html :: header}"></div>
-    <div th:insert="~{fragments.html :: navbar}"></div>
+<div th:fragment="contact">
     <h1 th:text="${pageTitle}"></h1>
 
     <h1>Contact</h1>
@@ -42,6 +36,4 @@
         <li><a href="https://burgoynesax.com/">Alex Burgoyne</a></li>
         <li><a href="https://www.dandipiero.com/">Dan DiPiero</a></li>
     </ul>
-
-</body>
-</html>
+</div>
