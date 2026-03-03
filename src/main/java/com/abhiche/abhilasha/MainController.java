@@ -25,6 +25,7 @@ public class MainController {
     public String nullCopula(Model model) {
         model.addAttribute("pageTitle", "Null Copula");
         model.addAttribute("content", "fragments/null-copula");
+        model.addAttribute("pageCss", "/css/null-copula.css");
         return "index";
     }
 
@@ -53,6 +54,7 @@ public class MainController {
     public String contact(Model model) {
         model.addAttribute("pageTitle", "Contact / Links");
         model.addAttribute("content", "fragments/contact");
+        model.addAttribute("pageCss", "/css/contact.css");
         return "index";
     }
 }

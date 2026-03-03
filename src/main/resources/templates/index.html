@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head th:insert="~{fragments.html :: head}"><title th:text="${pageTitle}"></title></head>
+<head th:insert="~{page-template.html :: head}">
+    <title th:text="${pageTitle}"></title>
+    <link rel="stylesheet" th:href="@{${pageCss}}" />
+</head>
 
 <body>
     <div class="header-nav-template">
-        <div th:insert="~{fragments.html :: header}"></div>
-        <div th:insert="~{fragments.html :: navbar}"></div>
+        <div th:insert="~{page-template.html :: header}"></div>
+        <div th:insert="~{page-template.html :: navbar}"></div>
     </div>
 
     <div th:insert="${content}">
