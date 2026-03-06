@@ -1,6 +1,5 @@
 package com.abhiche.abhilasha;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,44 +8,53 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @RequestMapping("/")
-    public String homePage(Model model) {
-        model.addAttribute("pageTitle", "abhilasha is an electro-acoustic improviser");
-        return "home";
+    public String index(Model model) {
+        model.addAttribute("pageTitle", "abhilasha is an electro-acoustic improvisor");
+        model.addAttribute("content", "fragments/home");
+        return "index";
     }
 
     @RequestMapping("/bio")
     public String bio(Model model) {
         model.addAttribute("pageTitle", "Bio");
-        return "bio";
+        model.addAttribute("content", "fragments/bio");
+        return "index";
     }
 
     @RequestMapping("/nullcopula")
     public String nullCopula(Model model) {
         model.addAttribute("pageTitle", "Null Copula");
-        return "null-copula";
+        model.addAttribute("content", "fragments/null-copula");
+        model.addAttribute("pageCss", "/css/null-copula.css");
+        return "index";
     }
 
     @RequestMapping("/turtleboat")
     public String turtleBoat(Model model) {
         model.addAttribute("pageTitle", "Turtle Boat");
-        return "turtle-boat";
+        model.addAttribute("content", "fragments/turtle-boat");
+        return "index";
     }
 
     @RequestMapping("/recordings")
     public String recordings(Model model) {
         model.addAttribute("pageTitle", "Recordings");
-        return "recordings";
+        model.addAttribute("content", "fragments/recordings");
+        return "index";
     }
 
     @RequestMapping("/performances")
     public String performances(Model model) {
         model.addAttribute("pageTitle", "Performances");
-        return "performances";
+        model.addAttribute("content", "fragments/performances");
+        return "index";
     }
 
     @RequestMapping("/contact")
     public String contact(Model model) {
         model.addAttribute("pageTitle", "Contact / Links");
-        return "contact";
+        model.addAttribute("content", "fragments/contact");
+        model.addAttribute("pageCss", "/css/contact.css");
+        return "index";
     }
 }

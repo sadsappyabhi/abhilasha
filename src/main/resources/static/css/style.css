@@ -1,0 +1,135 @@
+@import url('https://fonts.cdnfonts.com/css/nimbus-sans-l');
+html {
+  font-family: 'Nimbus Sans L', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Verdana, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 10pt;
+}
+
+body {
+  background-image: url('/img/shreds.jpeg');
+  background-size: 100% auto;
+  background-repeat: repeat;
+}
+
+a:link {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a:hover {
+  color: black;
+  text-decoration: underline;
+  font-size: 1.1em;
+  font-weight: bolder;
+
+}
+
+a:active {
+  color: black;
+  text-decoration: underline;
+  font-size: 1.1em;
+  font-weight: bolder;
+  font-style:italic;
+}
+
+a:visited {
+  color: purple;
+}
+
+img {
+  border-radius: 5%;
+}
+
+p {
+  line-height: 1.7em;
+  text-indent: 5%;
+}
+
+header {
+  position: sticky;
+  background-color: #ccc;
+  border-radius: 10px;
+  margin: 0.2em;
+  min-height: fit-content;
+  z-index: 100;
+}
+
+header h1 {
+  padding-left: 20px;
+}
+
+nav {
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 0.5em;
+}
+
+nav ul {
+  list-style: none;
+  padding-inline-start: 10px;
+}
+
+nav li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.header-nav-template {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (orientation : portrait) {
+
+  .name-spacing {
+    display: inline-block;
+    margin-left: 33%;
+  }
+  .menu {
+    position: sticky;
+    top:0;
+  }
+
+  .menu ul {
+    column-count: 2;
+  }
+}
+
+@media screen and (orientation : landscape) {
+   li {
+    font-weight: 600%;
+  }
+
+  header {
+    position: sticky;
+    top: 0; /* position: sticky, and top: 0 make the scroll/stick effect*/
+    max-width: 800px;
+  }
+  nav {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    width: 112px;
+    min-width: fit-content;
+    min-height: fit-content;
+    background-color: #eee;
+    overflow-y: auto;
+    border-radius: 5px;
+    max-height: calc(100vh - 100px);
+  }
+
+  body {
+    margin-top: 50px;
+    margin-left: 180px;
+    padding: 20px;
+    background-color: #fff;
+    width: 50%;
+    max-width: 500px;
+    min-width: 200px;
+    word-wrap: break-word;
+    border-radius: 5px;
+  }
+}
