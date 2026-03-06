@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  background-image: url('/img/shreds.jpeg');
+  background-image: url(../img/shreds.jpeg);
   background-size: 100% auto;
   background-repeat: repeat;
 }
@@ -34,7 +34,7 @@ a:active {
 }
 
 a:visited {
-  color: purple;
+  color: black;
 }
 
 img {
@@ -46,7 +46,7 @@ p {
   text-indent: 5%;
 }
 
-header {
+.header {
   position: sticky;
   background-color: #ccc;
   border-radius: 10px;
@@ -55,32 +55,39 @@ header {
   z-index: 100;
 }
 
-header h1 {
+.header h1 {
   padding-left: 20px;
 }
 
-nav {
+.navbar {
   background-color: #eee;
   border-radius: 5px;
   margin: 0.5em;
 }
 
-nav ul {
+.navbar ul {
   list-style: none;
   padding-inline-start: 10px;
 }
 
-nav li a {
+.navbar li a {
   display: block;
   text-decoration: none;
   padding: 10px;
 }
 
-.header-nav-template {
-  display: flex;
-  flex-direction: column;
+.content {
+  margin: 0.5em;
+  padding: 20px;
+  background-color: #fff;
+  word-wrap: break-word;
+  border-radius: 5px;
+  /* border: 1px inset grey; */
 }
 
+.content li {
+  padding: 0.75em;
+}
 
 @media screen and (orientation : portrait) {
 
@@ -88,27 +95,27 @@ nav li a {
     display: inline-block;
     margin-left: 33%;
   }
-  .menu {
+  .navbar {
     position: sticky;
     top:0;
   }
 
-  .menu ul {
+  .navbar ul {
     column-count: 2;
   }
 }
 
 @media screen and (orientation : landscape) {
-   li {
-    font-weight: 600%;
+  li {
+    font-weight: bolder;
   }
 
-  header {
+  .header {
     position: sticky;
     top: 0; /* position: sticky, and top: 0 make the scroll/stick effect*/
     max-width: 800px;
   }
-  nav {
+  .navbar {
     position: fixed;
     top: 100px;
     left: 20px;
@@ -121,7 +128,7 @@ nav li a {
     max-height: calc(100vh - 100px);
   }
 
-  body {
+  .content {
     margin-top: 50px;
     margin-left: 180px;
     padding: 20px;

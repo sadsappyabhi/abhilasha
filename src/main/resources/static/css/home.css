@@ -4,7 +4,7 @@ img {
 
 img:hover {
     filter: grayscale(0.2);
-    scale: (1.1);
+    transform: scale(1.1);
 }
 
 .announcement {
@@ -37,11 +37,9 @@ img:hover {
 }
 
 .home-image-container img {
-    margin: 0 20px;
     height: auto;
     max-width: 40%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     border-radius: 5px;
     box-shadow: 2px 2px 1px grey;
 }

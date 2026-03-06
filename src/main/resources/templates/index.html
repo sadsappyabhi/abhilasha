@@ -2,16 +2,17 @@
 <html lang="en">
 <head th:insert="~{page-template.html :: head}">
     <title th:text="${pageTitle}"></title>
-    <link rel="stylesheet" th:href="@{${pageCss}}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{${pageStyle}}" />
 </head>
 
 <body>
-    <div class="header-nav-template">
-        <div th:insert="~{page-template.html :: header}"></div>
-        <div th:insert="~{page-template.html :: navbar}"></div>
+    <div>
+        <div th:insert="~{page-template.html :: header}" class="header"></div>
+        <div th:insert="~{page-template.html :: navbar}" class="navbar"></div>
     </div>
 
-    <div th:insert="${content}">
+    <div th:insert="~{${content}}" class="content">
         <!-- Content Fragments Go Here! -->
     </div>
 </body>

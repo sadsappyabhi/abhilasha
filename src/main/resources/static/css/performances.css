@@ -1,0 +1,80 @@
+.center {
+    text-align: center;
+}
+
+.upcoming img {
+    max-width: 75%;
+    padding: 1em;
+    border-radius: 5%;
+}
+
+.gigs ul {
+    list-style-type: circle;
+    padding-left: 5%;
+}
+
+.fliers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Hide input buttons */
+input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    font-size: large;
+}
+
+label:hover {
+    font-style: italic;
+}
+
+
+input[type="checkbox"]:checked+label {
+    /* background-color: gray; */
+    border-bottom: 2px solid black;
+}
+
+/* Hide flier div b default */
+
+.flier-container {
+    display: none;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Show flier div */
+input[type="checkbox"]:checked+label+.flier-container {
+    display: block;
+}
+
+.fliers li {
+    list-style-type: none;
+}
+
+ul.fliers {
+    padding: 0;
+}
+
+.fliers > li {
+    flex-basis: 200px;
+}
+
+.fliers li img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 5%;
+}
+
+.fliers::after {
+    content: "";
+    flex-basis: 350px;
+}
