@@ -9,7 +9,6 @@ public class MainController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("pageTitle", "abhilasha");
         model.addAttribute("content", "fragments/home");
         return "index";
     }
