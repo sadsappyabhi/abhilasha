@@ -1,11 +1,19 @@
 package com.abhiche.abhilasha;
 
+import com.abhiche.abhilasha.performances.PerformanceDTO;
+import com.abhiche.abhilasha.performances.PerformanceService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class MainController {
+
+    @Autowired
+    private PerformanceService performanceService;
 
     @RequestMapping("/")
     public String index(Model model) {
@@ -45,6 +53,10 @@ public class MainController {
     public String performances(Model model) {
         model.addAttribute("pageTitle", "Performances");
         model.addAttribute("content", "fragments/performances");
+
+        List<List<PerformanceDTO>> performances = performanceService.findAll();
+        model.addAttribute("performances", performances);
+
         return "index";
     }
 

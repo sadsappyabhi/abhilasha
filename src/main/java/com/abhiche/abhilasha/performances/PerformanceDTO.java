@@ -1,10 +1,10 @@
 package com.abhiche.abhilasha.performances;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public record PerformanceDTO(
         Long id,
-        Date date,
+        LocalDate date,
         String project,
         String venue,
         String notes
