@@ -1,17 +1,19 @@
 <head th:fragment="head">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" th:href="@{favicon.ico}" type="image/x-icon" />
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
 <!--    <title th:if="${pageTitle}" th:text="${pageTitle} + ' - a b h i l a s h a'"-->
 <!--        th:unless="${pageTitle}" th:text="'a b h i l a s h a'"></title>-->
     <title
-        th:text="${pageTitle} != null ? ${pageTitle} + ' - a b h i l a s h a' : 'a b h i l a s h a'">
-    </title>
+        th:text="${pageTitle} != null
+        ? ${pageTitle} + ' - a · b · h · i · l · a · s · h · a'
+        : 'a ·  b · h · i · l · a · s · h · a'"
+    ></title>
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <header th:fragment="header">
-    <h1>a b h i l a s h a</h1>
+    <h1>a ·  b · h · i · l · a · s · h · a</h1>
 </header>
 
 <nav th:fragment="navbar">
