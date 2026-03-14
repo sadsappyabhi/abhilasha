@@ -1,5 +1,6 @@
 package com.abhiche.abhilasha.performances;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -9,7 +10,9 @@ import java.util.List;
 @Service
 public class PerformanceServiceImpl implements PerformanceService {
 
+    @Autowired
     private final PerformanceRepository performanceRepository;
+    @Autowired
     private final PerformanceMapper performanceMapper;
 
     public PerformanceServiceImpl(PerformanceRepository performanceRepository, PerformanceMapper performanceMapper) {
