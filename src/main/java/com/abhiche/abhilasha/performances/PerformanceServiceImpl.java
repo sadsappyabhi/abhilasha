@@ -2,6 +2,7 @@ package com.abhiche.abhilasha.performances;
 
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,30 +17,23 @@ public class PerformanceServiceImpl implements PerformanceService {
         this.performanceMapper = performanceMapper;
     }
 
-    public List<PerformanceDTO> findAll() {
+    public List<List<PerformanceDTO>> findAll() {
         List<Performance> performances = performanceRepository.findAll();
-        List<PerformanceDTO> performanceDTOs = new ArrayList<>();
-        for (Performance performance : performances) {
-            performanceDTOs.add(performanceMapper.performanceToPerformanceDTO(performance));
-        }
-        return performanceDTOs;
-    }
+        List<PerformanceDTO> futurePerformances = new  ArrayList<>();
+        List<PerformanceDTO> pastPerformances = new ArrayList<>();
 
-    public List<PerformanceDTO> findAllInFuture() {
-        List<Performance> performances = performanceRepository.findAllInFuture();
-        List<PerformanceDTO> performanceDTOs = new ArrayList<>();
         for (Performance performance : performances) {
-            performanceDTOs.add(performanceMapper.performanceToPerformanceDTO(performance));
+            LocalDate today = LocalDate.now();
+            if (performance.getDate().isBefore(today)) {
+                pastPerformances.add(performanceMapper.performanceToPerformanceDTO(performance));
+            } else {
+                futurePerformances.add(performanceMapper.performanceToPerformanceDTO(performance));
+            }
         }
-        return performanceDTOs;
-    }
 
-    public List<PerformanceDTO> findAllInPast() {
-        List<Performance> performances = performanceRepository.findAllInPast();
-        List<PerformanceDTO> performanceDTOs = new ArrayList<>();
-        for (Performance performance : performances) {
-            performanceDTOs.add(performanceMapper.performanceToPerformanceDTO(performance));
-        }
+        List<List<PerformanceDTO>> performanceDTOs = new ArrayList<>();
+        performanceDTOs.add(futurePerformances);
+        performanceDTOs.add(pastPerformances);
         return performanceDTOs;
     }
 }

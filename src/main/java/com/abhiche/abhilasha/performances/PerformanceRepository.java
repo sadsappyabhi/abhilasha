@@ -9,7 +9,4 @@ public interface PerformanceRepository extends JpaRepository<Performance, Long> 
     @Override
     @Nonnull
     List<Performance> findAll();
-
-    List<Performance> findAllInFuture();
-    List<Performance> findAllInPast();
 }

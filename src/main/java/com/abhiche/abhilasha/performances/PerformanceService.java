@@ -3,7 +3,5 @@ package com.abhiche.abhilasha.performances;
 import java.util.List;
 
 public interface PerformanceService {
-    List<PerformanceDTO> findAll();
-    List<PerformanceDTO> findAllInFuture();
-    List<PerformanceDTO> findAllInPast();
+    List<List<PerformanceDTO>> findAll();
 }

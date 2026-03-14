@@ -19,21 +19,8 @@ public class PerformanceController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PerformanceDTO>> findAll() {
-        List<PerformanceDTO> performances = performanceService.findAll();
+    public ResponseEntity<List<List<PerformanceDTO>>> findAll() {
+        List<List<PerformanceDTO>> performances = performanceService.findAll();
         return ResponseEntity.ok(performances);
     }
-
-    @GetMapping("/future")
-    public ResponseEntity<List<PerformanceDTO>> findAllInFuture() {
-        List<PerformanceDTO> performances = performanceService.findAllInFuture();
-        return ResponseEntity.ok(performances);
-    }
-
-    @GetMapping("/past")
-    public ResponseEntity<List<PerformanceDTO>> findAllInPast() {
-        List<PerformanceDTO> performances = performanceService.findAllInPast();
-        return ResponseEntity.ok(performances);
-    }
-
 }
