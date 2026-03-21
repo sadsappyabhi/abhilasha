@@ -5,3 +5,8 @@ CREATE TABLE IF NOT EXISTS performances (
     venue   VARCHAR(255)    NOT NULL,
     notes   TEXT
 );
+
+COPY performances(date, project, venue, notes)
+FROM '/docker-entrypoint-initdb.d/performances.csv'
+DELIMITER ','
+CSV HEADER;
