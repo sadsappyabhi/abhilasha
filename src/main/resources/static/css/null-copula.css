@@ -5,14 +5,18 @@ iframe {
 }
 
 p {
-    margin: 3em;
-    text-indent: 0;
-}
-
-.center {
     text-align: center;
 }
 
-.hidden {
-    display: none;
+.img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.img-container img {
+    display: block;
+    width: 80%;
+    margin: 20px;
 }
