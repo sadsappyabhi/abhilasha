@@ -8,10 +8,6 @@ p {
     text-align: center;
 }
 
-.hidden {
-    display: none;
-}
-
 .img-container {
     display: flex;
     flex-direction: column;
