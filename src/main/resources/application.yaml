@@ -1,8 +1,6 @@
 spring:
   application:
     name: Abhilasha Chebolu Figueroa
-  profiles:
-    active: prod
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html

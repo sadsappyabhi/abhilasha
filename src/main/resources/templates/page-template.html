@@ -2,8 +2,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
-<!--    <title th:if="${pageTitle}" th:text="${pageTitle} + ' - a b h i l a s h a'"-->
-<!--        th:unless="${pageTitle}" th:text="'a b h i l a s h a'"></title>-->
+
+
+    <link rel="icon" type="image/png" th:href="@{/favicon-96x96.png}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}" />
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" />
+    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/apple-touch-icon.png}" />
+    <link rel="manifest" th:href="@{/site.webmanifest}" />
+
+
+
+
     <title
         th:text="${pageTitle} != null
         ? ${pageTitle} + ' - a · b · h · i · l · a · s · h · a'
