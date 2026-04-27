@@ -1,14 +1,14 @@
 <div>
     <h1>Performances</h1>
     <h2>Upcoming</h2>
-        <ul th:each="futurePerformance : ${performances[0]}">
-            <li>
-                <span th:text="${#temporals.format(futurePerformance.date, 'MMMM d, yyyy')}"></span>&nbsp; - &nbsp;
-                <span th:text="${futurePerformance.project}"></span>&nbsp; @ &nbsp;
-                <span th:text="${futurePerformance.venue}"></span>&nbsp;
-                <span th:text="${futurePerformance.notes}"></span>
-            </li>
-        </ul>
+    <ul th:each="futurePerformance : ${performances[0]}">
+        <li>
+            <span th:text="${#temporals.format(futurePerformance.date, 'MMMM d, yyyy')}"></span>&nbsp; - &nbsp;
+            <span th:text="${futurePerformance.project}"></span>&nbsp; @ &nbsp;
+            <span th:text="${futurePerformance.venue}"></span>&nbsp;
+            <span th:text="${futurePerformance.notes}"></span>
+        </li>
+    </ul>
     <h2>Past</h2>
     <ul th:each="pastPerformance : ${performances[1]}">
         <li>
