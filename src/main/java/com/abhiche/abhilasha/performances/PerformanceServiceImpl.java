@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -33,6 +34,10 @@ public class PerformanceServiceImpl implements PerformanceService {
                 futurePerformances.add(performanceMapper.performanceToPerformanceDTO(performance));
             }
         }
+
+        Collections.sort(futurePerformances, (p1, p2) -> p1.date().compareTo(p2.date()));
+        Collections.sort(pastPerformances, (p2, p1) -> p1.date().compareTo(p2.date()));
+
 
         List<List<PerformanceDTO>> performanceDTOs = new ArrayList<>();
         performanceDTOs.add(futurePerformances);
