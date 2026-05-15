@@ -1,34 +1,51 @@
 <head th:fragment="head">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
-    <link rel="icon" type="image/png" th:href="@{/favicon-96x96.png}" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}" />
-    <link rel="shortcut icon" th:href="@{/favicon.ico}" />
-    <link rel="apple-touch-icon" sizes="180x180" th:href="@{/apple-touch-icon.png}" />
-    <link rel="manifest" th:href="@{/site.webmanifest}" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon" />
+  <link
+    rel="icon"
+    type="image/png"
+    th:href="@{/favicon-96x96.png}"
+    sizes="96x96"
+  />
+  <link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}" />
+  <link rel="shortcut icon" th:href="@{/favicon.ico}" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    th:href="@{/apple-touch-icon.png}"
+  />
+  <link rel="manifest" th:href="@{/site.webmanifest}" />
 
-    <!-- Umami -->
-    <script defer src="https://stats.mocalabs.dev/script.js" data-website-id="ce558719-1149-4cbf-a0dc-08fb2eb56219"></script>
+  <!-- Umami -->
+  <script
+    defer
+    src="https://stats.mocalabs.dev/script.js"
+    data-website-id="ce558719-1149-4cbf-a0dc-08fb2eb56219"
+  ></script>
 
-    <title th:text="${pageTitle} != null
+  <title
+    th:text="${pageTitle} != null
         ? ${pageTitle} + ' - a · b · h · i · l · a · s · h · a'
-        : 'a ·  b · h · i · l · a · s · h · a'"></title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+        : 'a ·  b · h · i · l · a · s · h · a'"
+  ></title>
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 
 <header th:fragment="header">
-    <a th:href="@{/}" style="text-decoration: none;"><h1>a · b · h · i · l · a · s · h · a</h1></a>
+  <a th:href="@{/}" style="text-decoration: none"
+    ><h1>a · b · h · i · l · a · s · h · a</h1></a
+  >
 </header>
 
 <nav th:fragment="navbar">
-    <ul>
-        <li><a th:href="@{/}">Home</a></li>
-        <li><a th:href="@{/bio}">Bio</a></li>
-        <li><a th:href="@{/nullcopula}">Null Copula</a></li>
-        <li><a th:href="@{/turtleboat}">Turtle Boat</a></li>
-        <li><a th:href="@{/recordings}">Recordings</a></li>
-        <li><a th:href="@{/performances}">Performances</a></li>
-        <li><a th:href="@{/contact}">Contact</a></li>
-    </ul>
+  <ul>
+    <li><a th:href="@{/}">Home</a></li>
+    <li><a th:href="@{/bio}">Bio</a></li>
+    <li><a th:href="@{/nullcopula}">Null Copula</a></li>
+    <li><a th:href="@{/turtleboat}">Turtle Boat</a></li>
+    <li><a th:href="@{/recordings}">Recordings</a></li>
+    <li><a th:href="@{/performances}">Performances</a></li>
+    <li><a th:href="@{/contact}">Contact</a></li>
+  </ul>
 </nav>
