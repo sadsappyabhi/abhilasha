@@ -23,7 +23,7 @@ steps:
       host:
         - 46.225.180.241
       username: abby
-      port: 80
+      port: 88
       key:
         from_secret: SSH_KEY
       script:
