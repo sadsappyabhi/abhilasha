@@ -3,21 +3,35 @@ when:
     branch: [main, woodpecker-ci-workflow-testing]
 
 steps:
-  - name: build-app
-    image: woodpeckerci/plugin-kaniko
+  - name: build-and-push
+    image: woodpeckerci/plugin-docker-buildx
     settings:
       registry: registry.mocalabs.dev
       repo: registry.mocalabs.dev/mocalabs/abhilasha
-      dockerfile: Dockerfile
-      context: .
       tags:
         - latest
         - ${CI_COMMIT_SHA:0:8}
-      cache: true
-      skip_tls_verify: false
-      build_args:
-        - COMMIT_SHA=${CI_COMMIT_SHA}
+      cache: false
       username:
         from_secret: REGISTRY_USERNAME
       password:
         from_secret: REGISTRY_PASSWORD
+
+  - name: ssh-and-deploy
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 46.225.180.241
+      username: abby
+      port: 80
+      key:
+        from_secret: SSH_KEY
+      script:
+        - echo "Changing into mocalabs/abhilasha directory ..."
+        - cd /opt/apps/abhilasha
+        - echo "Tearing down current container ..."
+        - docker compose down
+        - echo "Removing old and unused images ..."
+        - docker image prune -a
+        - echo "Pulling and running latest image from resgistry ..."
+        - docker compose pull && docker compose up -d
