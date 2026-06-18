@@ -1,0 +1,54 @@
+when:
+  - event: [push, manual]
+    branch: [main]
+
+steps:
+  - name: build-and-push-db
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      dockerfile: Dockerfile-db
+      repo: registry.mocalabs.dev/mocalabs/abhilasha-db
+      tags:
+        - latest
+        - sha-${CI_COMMIT_SHA:0:8}
+      registry: registry.mocalabs.dev
+      cache: false
+      username:
+        from_secret: REGISTRY_USERNAME
+      password:
+        from_secret: REGISTRY_PASSWORD
+
+  - name: build-and-push-site
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      dockerfile: Dockerfile
+      registry: registry.mocalabs.dev
+      repo: registry.mocalabs.dev/mocalabs/abhilasha
+      tags:
+        - latest
+        - sha-${CI_COMMIT_SHA:0:8}
+      cache: false
+      username:
+        from_secret: REGISTRY_USERNAME
+      password:
+        from_secret: REGISTRY_PASSWORD
+
+  - name: ssh-and-deploy
+    image: appleboy/drone-ssh
+    settings:
+      host:
+        - 46.225.180.241
+      username: abby
+      port:
+        from_secret: SSH_PORT
+      key:
+        from_secret: SSH_KEY
+      script:
+        - echo "Changing into mocalabs/abhilasha directory ..."
+        - cd /opt/apps/abhilasha
+        - echo "Tearing down current container and removing data ..."
+        - docker compose down -v
+        - echo "Removing old and unused images ..."
+        - docker image prune -af
+        - echo "Pulling and running latest image from resgistry ..."
+        - docker compose pull && docker compose up -d
